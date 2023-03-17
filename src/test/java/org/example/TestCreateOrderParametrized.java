@@ -36,13 +36,24 @@ public class TestCreateOrderParametrized extends BaseTest{
         };
     }
     @Test
-    public void TestOrder(){
+    public void testCreateNewUserOrderWithHeaderButton(){
         MainPageElements objelements = new MainPageElements(driver);
         UserInfoOrderPageElements objUserInfo = new UserInfoOrderPageElements(driver);
         RentInfoOrderPageElements objInfoOrdred = new RentInfoOrderPageElements(driver);
 
-        objelements.pushAcceptCookieButton();
         objelements.scrollToPushHeaderOrderButton();
+        objelements.pushHeaderOrderButton();
+        objUserInfo.createOrder(userName,userSurname, userAddress,userPhoneNumber);
+        objInfoOrdred.acceptOrder(orderDate,comment);
+        assertTrue(objInfoOrdred.checkModalWindowEnabled());
+    }
+    @Test
+    public void testCreateNewUserOrderWithFooterButton(){
+        MainPageElements objelements = new MainPageElements(driver);
+        UserInfoOrderPageElements objUserInfo = new UserInfoOrderPageElements(driver);
+        RentInfoOrderPageElements objInfoOrdred = new RentInfoOrderPageElements(driver);
+
+        objelements.scrollToPushFooterOrderButton();
         objelements.pushFooterOrderButton();
         objUserInfo.createOrder(userName,userSurname, userAddress,userPhoneNumber);
         objInfoOrdred.acceptOrder(orderDate,comment);

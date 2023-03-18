@@ -1,6 +1,7 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.example.pageObject.Constans;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
@@ -22,7 +23,7 @@ public class BaseTest {
         // SafariDriver driver = new SafariDriver();
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        driver.get(Constans.PAGE_URL);
         driver.findElement(acceptCookieButton).click();
     }
 

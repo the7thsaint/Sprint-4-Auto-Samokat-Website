@@ -44,7 +44,6 @@ public class TestListOfQuestionsAboutImportant extends BaseTest {
         MainPageElements objMainElements = new MainPageElements(driver);
         objMainElements.scrollPageToQuestionsAboutImportant();
         objMainElements.clickQuestionButton(questionLocator);
-        new MainPageElements(driver);
         String ActualAnswerText = driver.findElement(By.id(answerLocator)).getText();
         assertEquals("Тексты не совпали", answerText, ActualAnswerText);
     }

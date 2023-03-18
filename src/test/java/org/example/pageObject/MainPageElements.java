@@ -66,10 +66,9 @@ public class MainPageElements {
     }
 
     //метод для скролла до списка "Вопросы о важном"
-    public MainPageElements scrollPageToQuestionsAboutImportant(){
+    public void scrollPageToQuestionsAboutImportant(){
         WebElement lastQuestionArrow = driver.findElement(By.id(buttonsQuestionArray[7]));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", lastQuestionArrow);
-        return this;
     }
     // клик по стрелке выпадающего списка
     public static void clickQuestionArrow(int questionNumber) {
@@ -85,11 +84,10 @@ public class MainPageElements {
         assertEquals(expectedText, answerText);
     }
     //Клик по кнопке вопроса
-    public MainPageElements clickQuestionButton(String questionButtonLocator) {
+    public void clickQuestionButton(String questionButtonLocator) {
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(By.id(questionButtonLocator)));
         driver.findElement(By.id(questionButtonLocator)).click();
-        return this;
     }
 
 

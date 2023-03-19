@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static org.junit.Assert.assertEquals;
 
 public class MainPageElements {
@@ -15,7 +14,7 @@ public class MainPageElements {
     // кнопка "Заказать" в нижней части страницы
     private final By footerOrderButton = By.xpath(".//button[(@class ='Button_Button__ra12g Button_Middle__1CSJM' and text()='Заказать')]");
     // Локаторы кнопок с вопросами
-    private static final String[] buttonsQuestionArray = new String[]{
+    public static final String[] buttonsQuestionArray = new String[]{
             "accordion__heading-0",
             "accordion__heading-1",
             "accordion__heading-2",
@@ -25,7 +24,7 @@ public class MainPageElements {
             "accordion__heading-6",
             "accordion__heading-7"};
     //Локаторы текстов "Вопросы о важном
-    private static final String[]  textQuestionsAboutImportantArray = new String[]{
+    public static final String[]  textQuestionsAboutImportantArray = new String[]{
             "accordion__panel-0",
             "accordion__panel-1",
             "accordion__panel-2",

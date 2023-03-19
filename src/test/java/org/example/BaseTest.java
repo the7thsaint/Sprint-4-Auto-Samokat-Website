@@ -18,9 +18,8 @@ public class BaseTest {
     @Before
     public void startUp() {
 
-        //System.setProperty("webdriver.gecko.driver","/Users/pavelvinogradov/Documents/bin/geckodriver");
-        //driver = new FirefoxDriver();
-        // SafariDriver driver = new SafariDriver();
+       // WebDriverManager.firefoxdriver().setup();
+       // driver = new FirefoxDriver();
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get(Constans.PAGE_URL);
